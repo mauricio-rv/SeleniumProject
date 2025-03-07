@@ -5,6 +5,7 @@
             <class name="org.example.LoginTest"/>
             <class name="org.example.DashboardTest"/>
             <class name="org.example.AddCandidateTest"/>
+            <class name="org.example.AdminTest"/>
         </classes>
     </test>
 </suite>

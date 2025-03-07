@@ -22,7 +22,6 @@ public class RecruitmentPage extends BasePage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(d -> driver.findElement(recruitmentButton).isDisplayed());
         driver.findElement(recruitmentButton).click();
-        wait.until(d -> driver.findElement(addCandidateBtn).isDisplayed());
     }
 
 }

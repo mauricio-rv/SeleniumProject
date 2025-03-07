@@ -13,6 +13,5 @@ public class DashboardTest extends BaseTest{
         dashboardPage.searchSidebar(searchText);
         boolean results = dashboardPage.searchSidebaHasFoundResultsr(searchText);
         Assert.assertTrue(results);
-
     }
 }
