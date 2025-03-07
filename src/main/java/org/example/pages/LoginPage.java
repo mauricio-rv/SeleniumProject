@@ -19,9 +19,7 @@ public class LoginPage extends BasePage {
         this.driver = driver;
     }
 
-    public void login(){
-        String username = PropertyUtils.getProperty("user.name");
-        String password = PropertyUtils.getProperty("user.password");
+    public void login(String username, String password){
 
         WebElement usernameInput = driver.findElement(usernameBox);
         usernameInput.sendKeys(username);

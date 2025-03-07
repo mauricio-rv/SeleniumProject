@@ -20,7 +20,7 @@ public class DashboardPage extends BasePage {
         this.driver = driver;
     }
 
-    public WebElement getDashboardHeader() {
+    public WebElement getSidebarHeader() {
         WebElement dashboardHeader = driver.findElement(sidebar);
         return dashboardHeader;
     }
@@ -30,7 +30,7 @@ public class DashboardPage extends BasePage {
         dashboardSidebar.sendKeys(text);
     }
 
-    public boolean getSearchSidebarResult(String text){
+    public boolean searchSidebaHasFoundResultsr(String text){
         List<WebElement> dashboardSearch = driver.findElements(sidebarSearchResponse);
         boolean textFound = true;
         for (WebElement element: dashboardSearch){

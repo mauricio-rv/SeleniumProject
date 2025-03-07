@@ -1,14 +1,10 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="Suite" thread-count="2">
+<suite name="Suite">
     <test name="LoginTests">
         <classes>
             <class name="org.example.LoginTest"/>
-
-        </classes>
-    </test>
-    <test name="DashboardTests">
-        <classes>
             <class name="org.example.DashboardTest"/>
+            <class name="org.example.pages.AddCandidatePage"/>
         </classes>
     </test>
 </suite>

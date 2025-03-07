@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.pages.BasePage;
 import org.example.pages.LoginPage;
+import org.example.utils.PropertyUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -14,7 +15,9 @@ public class App {
         driver.navigate().to("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
         Thread.sleep(1000);
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.login();
+        String username = PropertyUtils.getProperty("user.name");
+        String password = PropertyUtils.getProperty("user.password");
+        loginPage.login(username, password);
         String pagetitle = driver.getTitle();
 
         System.out.println(pagetitle);

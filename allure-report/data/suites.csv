@@ -1,4 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","3","TestLogout","Suite","Wed Mar 05 15:04:27 CST 2025","broken","Wed Mar 05 15:04:27 CST 2025","org.example.DashboardTest","MultipleTestClasses","org.example.DashboardTest","TestLogout"
-"","5038","TestLogin","Suite","Wed Mar 05 15:04:17 CST 2025","broken","Wed Mar 05 15:04:22 CST 2025","org.example.LoginTest","MultipleTestClasses","org.example.LoginTest","TestLogin"
-"","5015","TestLogout","Suite","Wed Mar 05 15:04:22 CST 2025","broken","Wed Mar 05 15:04:27 CST 2025","org.example.LoginTest","MultipleTestClasses","org.example.LoginTest","TestLogout"
