@@ -15,9 +15,7 @@ public class App {
         driver.navigate().to("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
         Thread.sleep(1000);
         LoginPage loginPage = new LoginPage(driver);
-        String username = PropertyUtils.getProperty("user.name");
-        String password = PropertyUtils.getProperty("user.password");
-        loginPage.login(username, password);
+        loginPage.login();
         String pagetitle = driver.getTitle();
 
         System.out.println(pagetitle);

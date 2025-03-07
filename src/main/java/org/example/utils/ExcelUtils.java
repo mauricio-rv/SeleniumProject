@@ -6,6 +6,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
 
 public class ExcelUtils {
     public String[][] getCellData(String path, String sheetname) throws IOException {
@@ -20,14 +22,18 @@ public class ExcelUtils {
                 Row row = sheet.getRow(i);
                 for (int j = 0; j < colNum; j++) {
                     Cell cell = row.getCell(j);
-                    if (cell.getCellType() == CellType.STRING) {
+                    if(cell == null){
+                        data[i - 1][j] = "";
+                    }
+                    else if (cell.getCellType() == CellType.STRING) {
                         data[i - 1][j] = cell.getStringCellValue();
                     }
-                    else
-                    {
-                        data[i - 1][j] = String.valueOf(cell.getNumericCellValue());
+                    else if (cell.getCellType() == CellType.NUMERIC) {
+                        double number  = cell.getNumericCellValue();
+                        DecimalFormat df = new DecimalFormat("#");
+                        df.setMaximumIntegerDigits(11);
+                        data[i - 1][j] = df.format(number);
                     }
-                    System.out.println(data[i-1][j]);
                 }
             }
             return data;

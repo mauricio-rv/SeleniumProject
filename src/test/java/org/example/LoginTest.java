@@ -25,24 +25,16 @@ import java.time.Duration;
 public class LoginTest extends BaseTest
 {
     @Test(dataProvider = "getData")
-    public void TestLogin(String username, String password) throws Exception{
+    public void TestLogin(String username, String password, String expectedResult) throws Exception{
         LoginPage loginPage = new LoginPage(driver);
-        DashboardPage dashboardPage = new DashboardPage(driver);
-        loginPage.login(username, password);
-        boolean headerExists = dashboardPage.getSidebarHeader().isDisplayed();
-        Assert.assertTrue(headerExists);
-    }
-
-    @Test
-    public void TestLogout() throws Exception{
-        DashboardPage dashboardPage = new DashboardPage(driver);
-        dashboardPage.logout();
+        boolean isLoggedIn = loginPage.loginWithExpected(username, password, expectedResult);
+        Assert.assertTrue(isLoggedIn);
     }
 
     @DataProvider
     public String[][] getData() throws IOException {
         ExcelUtils excelUtils = new ExcelUtils();
-        String[][] data = excelUtils.getCellData("testdata/Book.xlsx", "Sheet1");
+        String[][] data = excelUtils.getCellData("testdata/DataTests.xlsx", "LoginTests");
 
         return data;
     }
